@@ -8,9 +8,9 @@
   --font-primary: "Poppins", sans-serif;
   --font-secondary: "Arvo", serif;
   --font-code: "Roboto", monospace;
-  --bg-color: #00000098;
+  --bg-color: #000000c7;
   --bg-color-transparent: #00000080;
-  --font-color: #ffffff;
+  --font-color: #e2cb00d3;
   --btn-bg-color: #e2cc00;
   --accent-color: #000000;
   --header-shadow: var(--accent-color) 0px 0px 5px;
@@ -19,7 +19,7 @@
 
 * {
   padding: 0;
-  margin: 0;
+  margin: 10;
   box-sizing: border-box;
 }
 
@@ -35,7 +35,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 1rem 2rem;
   justify-content: center;
@@ -51,7 +51,7 @@ header {
 
 header .container {
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -169,7 +169,7 @@ section {
 
 .countdown {
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
   justify-content: center;
   align-items: center;
 }
@@ -319,7 +319,7 @@ section {
 .splide {
   position: absolute;
   top: 90px;
-  left: 1rem;
+  left: 5rem;
   z-index: -1;
 }
 
