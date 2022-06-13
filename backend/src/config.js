@@ -8,13 +8,13 @@ const network = NETWORK.eth;
 
 // General metadata for Ethereum
 const namePrefix = "Omnium Collectibles";
-const description = "First NFT Collection From Omnium Meta.";
+const description = "Omnium Collectibles are NFTs That give holders special access to the features of the Omnium Meta Company.";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 33,
+    growEditionSizeTo: 4500,
     layersOrder: [
       { name: "NFT Drop" },
     ],
@@ -48,9 +48,9 @@ const CONTRACT_SYMBOL = 'OMNIUM C1';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778';
 const TREASURY_ADDRESS = '0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778';
-const MAX_SUPPLY = 4000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 15; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
-const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
+const MAX_SUPPLY = 4500; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MINT_PRICE = 120; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const TOKENS_PER_MINT = 5; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
 const PUBLIC_MINT_START_DATE = "2022-04-25T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00

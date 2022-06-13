@@ -1,0 +1,227 @@
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* GLOBAL STYLES */
+
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --font-size-xsm: 1.2rem;
+  --font-size-sm: 1.6rem;
+  --font-size-md: 2.4rem;
+  --font-size-lg: 3rem;
+  --font-size-xlg: 4rem;
+  --gap: 2rem;
+  --font-secondary: "Arvo", serif;
+  --font-code: "Roboto", monospace;
+  --bg-color: #000000c7;
+  --bg-color-transparent: #00000080;
+  --hover-colour: var(--bg-color);
+  --font-color: #e2cb00d3;
+  --btn-bg-color: #e2cc00;
+  --accent-color: #000000;
+  --header-shadow: var(--accent-color) 0px 0px 5px;
+  --card-shadow: var(--accent-color) 0px 0px 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-primary);
+    letter-spacing: 1px;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+header {
+    background-color: var(--bg-color);
+    box-shadow: var(--header-shadow);
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+li a:hover{
+  padding: 1rem;
+  top: 8rem;
+  right: 1rem;
+  display: block;
+  justify-content: center;
+  background-color: #a19205de;
+}
+
+button{
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--btn-bg-color);
+  color: var(--accent-color);
+  font-family: var(--font-secondary);
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  box-shadow: var(--header-shadow);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  
+}
+.btn:hover {
+    box-shadow: var(--bg-color-transparent);
+}
+  .btn:disabled {
+    cursor: default;
+}
+
+.wallet-btn, #go-to-mint-page{
+    border-radius: 4rem;
+  margin-left: 2rem;
+  border-color: transparent;
+    animation: goToMintAnimation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes goToMintAnimation{
+    0%{background-color: #e2cc00 ;}
+    20%{background-color: #e2cb00ec ;}
+    40%{background-color: #000000cc ;}
+    60%{background-color:  #e2cb00ec;}
+    80%{background-color: #e2cc00 ;}
+    100%{background-color: #e2cc00 ;}
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-block: 1rem;
+}
+
+.menu{
+  position: initial;
+  width: 45%;
+  background-color: #000000;
+  padding: 2rem;
+  top: 8rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.list{
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+.menu > .list{
+    flex-direction: row;
+}
+
+
+.list-link.current{
+  color: #ffe601;
+}
+
+.list-link:hover,
+.btn:hover,
+.btn:hover span{
+  color: #ffe601;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.headerBanner > .container {
+    flex-direction: row;
+    background-color: #131212;
+    box-shadow: var(--header-shadow);
+    justify-content: space-around;
+
+}
+
+  
+  #countdown {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  
+  .countdown {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .countdown ul {
+    display: flex;
+    gap: 2rem;
+  }
+  #subHeading{
+      margin: 1.5rem 1rem;
+      justify-content: space-around;
+  }
+  .countdown .clock-item {
+    list-style: none;
+    width: 60px;
+    height: auto;
+  }
+  .countdown .clock-item .count-number {
+    background: var(--accent-color);
+    color: var(--font-color);
+    font-size: inherit;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 0.3;
+    border-radius: 4px 4px 0 0;
+  }
+  .countdown .clock-item .count-text {
+    background: var(--btn-bg-color);
+    font-family: var(--font-secondary);
+    font-size: inherit;
+    color: var(--bg-color);
+    padding: 0.5rem 0.7rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 0.5;
+    border-radius: 0 0 4px 4px;
+  }
+
+.screen-sm-hidden{
+    display: none;
+}

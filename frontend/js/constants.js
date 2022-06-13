@@ -3,7 +3,7 @@ const chain = 'rinkeby'; // rinkeby or polygon
 
 const welcome_h1 = "Welcome to the Omnium Collectibles NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'The Omnium Collectibles NFT Project is a designed to give users premium access to all of Omnium Metas products and services <br> <a href="https://www.youtube.com/channel/UC4BI8vOqzA2Zgya7-YSe84g"  target="_blank" rel="noopener noreferrer">Omnium Metas Creator</a> YouTube channel.';
+const welcome_p = 'The Omnium Collectibles NFT Project is a designed to give users premium access to all of Omnium Metas products and services';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
@@ -15,7 +15,7 @@ const p_presale_mint_whitelisted = "You're on the whitelist for the pre-sale! �
 const p_presale_mint_already_minted = "You've already claimed your whitelist mint. Thank you! 🎉. You can still mint more NFTs in the public sale";
 const p_public_mint = "No whitelist needed. Public minting is now open! 🎉";
 const button_presale_coming_soon = "Get on the Whitelist";
-const button_presale_mint_whitelisted = "Mint Your Special NFT";
+const button_presale_mint_whitelisted = "Mint Your Omnium Collectible Series 1 NFT";
 const button_presale_mint_not_whitelisted = "Get on the Whitelist";
 const button_presale_already_minted = "Join The Community";
 const button_public_mint = "Mint Your NFT";
