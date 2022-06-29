@@ -161,56 +161,86 @@ button{
     overflow: hidden;
 }
 
-.headerBanner > .container {
-    flex-direction: row;
-    background-color: #131212;
-    box-shadow: var(--header-shadow);
-    justify-content: space-around;
-
+section{
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  background-color: var(--bg-color-transparent);
+}
+ 
+.screen-sm-hidden{
+    display: none;
 }
 
+ #countdown2h {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: var(--font-secondary);
   
-  #countdown {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
   }
-  
-  .countdown {
-    display: flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    align-items: center;
+
+
+ .countdown2 {
+  justify-content: space-between;
+   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.countdown2 > h1 {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+font-size: 30px;
+font-weight: normal;
+}
+
+
+
+.time2{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: medium;
   }
-  
-  .countdown ul {
-    display: flex;
-    gap: 2rem;
+
+.count1 {
+  background: var(--accent-color);
+  color: var(--font-color);
+  font-weight: bolder;
+  font-family: var(--font-secondary);
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 0.3;
+  border-radius: 4px 4px 0 0;
+}
+
+.count3 {
+  color: var(--font-color);
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  transform: scale(1.2);
+  padding-right:2rem;
+  width: 100%;
+  text-align: center;
   }
-  #subHeading{
-      margin: 1.5rem 1rem;
-      justify-content: space-around;
-  }
-  .countdown .clock-item {
-    list-style: none;
-    width: 60px;
-    height: auto;
-  }
-  .countdown .clock-item .count-number {
-    background: var(--accent-color);
-    color: var(--font-color);
-    font-size: inherit;
-    font-weight: 700;
-    font-family: var(--font-secondary);
-    padding: 1rem;
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 0.3;
-    border-radius: 4px 4px 0 0;
-  }
-  .countdown .clock-item .count-text {
-    background: var(--btn-bg-color);
+
+.count4{
+  color: #e2cc00;
+  font-weight: bold;
+  font-size: large;
+  margin-top: 16px;
+  transform: scale(1.3);
+}
+
+.count2 {
+  background: var(--btn-bg-color);
     font-family: var(--font-secondary);
     font-size: inherit;
     color: var(--bg-color);
@@ -220,8 +250,4 @@ button{
     text-align: center;
     line-height: 0.5;
     border-radius: 0 0 4px 4px;
-  }
-
-.screen-sm-hidden{
-    display: none;
 }
