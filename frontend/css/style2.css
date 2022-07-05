@@ -315,6 +315,8 @@ font-weight: normal;
       max-width: 600px;
       margin-left: 10px;
       margin-top: 16rem;
+      align-items: center;
+      text-align: center;
 
      }
 
