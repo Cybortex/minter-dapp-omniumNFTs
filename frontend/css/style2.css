@@ -295,6 +295,7 @@ font-weight: normal;
     text-align: center;
     padding-bottom: 1rem;
     margin-top: 2px;
+    z-index: 15000;
   }
 
   #b1{
@@ -307,13 +308,14 @@ font-weight: normal;
     width: 100%;
     margin: 0%;
     background-color: #00000080;
+    z-index: 15000;
 
      }
      .content{
       max-width: 600px;
       margin-left: 10px;
-      margin-right: 10px;
       margin-top: 16rem;
+
      }
 
      header{
