@@ -269,6 +269,7 @@ font-weight: normal;
   text-align: center;
   font-size: 30px;
   font-weight: bolder;
+  color: inherit;
 }
 
 .texthome {
@@ -318,6 +319,10 @@ font-weight: normal;
       align-items: center;
       text-align: center;
 
+     }
+
+     .welcomehe{
+      font-size: large;
      }
 
      header{
