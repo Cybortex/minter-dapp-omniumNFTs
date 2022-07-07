@@ -261,6 +261,9 @@ font-weight: normal;
 }
 .content {
   margin-top: 15rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .welcomehe {
