@@ -283,11 +283,25 @@ font-weight: normal;
   color: #daf107;
 }
 
+
+ .minpage {
+    font-size: larger;
+    align-content: center;
+    padding: 20px;
+  }
+  
 @media screen and (min-width :800px) {
   .largescreen-hidden {
     display: none;
   }
-} 
+
+
+  .minpage {
+    display: none;
+  }
+  
+}
+
 
 
 @media screen and (max-width :800px)  {
@@ -307,7 +321,7 @@ font-weight: normal;
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
-    padding: 15px;
+    padding: 10x;
     top:0%; right: 0%; left: 0%;
     width: 100%;
     margin: 0%;
@@ -329,7 +343,9 @@ font-weight: normal;
      }
 
      header{
-      margin-top: 8rem;
+      margin-top: 7rem;
      }
   
+  
 }
+
