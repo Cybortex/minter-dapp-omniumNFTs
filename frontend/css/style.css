@@ -63,6 +63,7 @@ footer {
 header {
   background-color: var(--bg-color);
   box-shadow: var(--header-shadow);
+  position: fixed;
 }
 
 header .container {
@@ -373,6 +374,11 @@ section {
 }
 
 @media screen and (max-width: 500px)  {
+  header .container {
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+  }
   .card {
   position: relative;
   background-color: var(--bg-color);
