@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Omnium Collectibles</title>
+    <title>Omnium Collectibles | Mint</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,60 +24,104 @@
       sizes="16x16"
       href="images/x-icon/OmniumMeta.png"
     />
+    <link rel="manifest" href="images/x-icon/site.webmanifest" />
 
-    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/style3.css" />
   </head>
   <body>
-    <header>
-    
-<section id="countdown2h" >
-    <div id="countdown2" class="countdown2">
-  
-        <h1 class="count3">Public-Sale Countdown:  </h1>
-
-    <div class="time2">
-      <h2 class="count1" id="days2"></h2> <h2 class="count2">Days</h2>
-    </div>
-
-    <div class="count4">
-     <h1>:</h1> 
-    </div>
-  
-    <div class="time2">
-      <h2 class="count1" id="hours2"></h2>    <h2 class="count2">Hours</h2> 
-    </div>
-
-    <div class="count4">
-      <h1>:</h1> 
-     </div>
-  
-    <div class="time2">
-      <h2 class="count1"  id="minutes2"> </h2> 
-       <h2 class="count2">Minutes</h2>    
-    </div>
-
-    <div class="count4">
-      <h1>:</h1> 
-     </div>
-  
-    <div class="time2">
-      <h2 class="count1" id="seconds2"> </h2> <h2 class="count2">Seconds</h2> 
-    </div>
-  
-  </div class="wallet-btn btn screen-sm-hidden" id="go-to-mint-page">
-  <a href="file:///C:/OB/Projects/git/minter-dapp-omniumNFTs/frontend/Mint.html">
-     <button class="wallet-btn btn ">
-          <span> Go To Mint Page</span>
-     </button>
-  </a>
-  </div>
-   </div>
-  
-  </section>
-
-  </header>
 
  
-  <script src="js/app2.js"></script>
+    <section class="container largescreen-hidden">
+    <div id="mintContainer" class="mint-container card show-card">
+          <div class="info-container">
+            <div>
+              <h3>Supply</h3>
+              <p id="totalSupply">100</p>
+            </div>
+            <div>
+              <h3>Price Per Mint</h3>
+              <p id="pricePerMint">1 ETH</p>
+            </div>
+            <div>
+              <h3>Max</h3>
+              <p id="maxPerMint">5 per wallet</p>
+            </div>
+          </div>
+          <div class="mint-qty">
+            <span>
+              <button class="input-number-decrement btn" id="mintDecrement">–</button>
+              <input
+                id="mintInput"
+                class="input-number btn"
+                type="number"
+                value="1"
+                min="1"
+                max="5"
+              />
+              <button class="input-number-increment btn" id="mintIncrement">+</button>
+            </span>
+            <button id="setQtyMax" class="btn">SET MAX</button>
+          </div>
+          <div class="total-price-container">
+            <h3>Total</h3>
+            <p id="totalPrice">.001 ETH</p>
+          </div>
+          <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
+        </div>
+      </div>
+      <div class="minted-container card show-card hidden">
+        <h1>🎉</h1>
+        <h2>Minted!</h2>
+        <p>Here's your trasaction link:</p>
+        <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
+          <button class="hero-btn btn">View Transaction</button>
+        </a>
+        <p>View it in the collection:</p>
+        <a
+          id="mintedLinkBtn"
+          href="https://testnets.opensea.io/collection/omnium-collectibles"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="hero-btn btn">View Collection</button>
+        </a>
+        <p> Visit Our Temporary Website</p>
+        <a
+          id="mintedLinkBtn"
+          href="https://omniumnfts.ezyro.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="hero-btn btn">Visit Website</button>
+        </a>
+        <p> Recieve Your Authentication Certificate Now</p>
+        <a
+          id="mintedLinkBtn"
+          href="https://omniumnfts.ezyro.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="hero-btn btn">Visit Website</button>
+        </a>
+      </section>
+      </div>
+     
+
+    <div id="spinner" class="dot-spin"></div>
+
+
+
+    <footer>
+      Copyright Ⓒ Omnium Meta 2022
+
+    <div style="padding: 15px;">
+      <h2> Support</h2>
+      <ul>
+        <li>Privacy Policy</li>
+        <li>Terms of Service</li>
+      </ul>
+    </div> 
+    </footer>
 
   </body>
+</html>
