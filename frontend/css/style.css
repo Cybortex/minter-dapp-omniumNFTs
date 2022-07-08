@@ -64,6 +64,7 @@ header {
   background-color: var(--bg-color);
   box-shadow: var(--header-shadow);
   position: fixed;
+  width: 100%;
 }
 
 header .container {
@@ -375,10 +376,12 @@ section {
 
 @media screen and (max-width: 500px)  {
   header .container {
-    flex-direction:column;
+    flex-direction:row;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
   }
+
   .card {
   position: relative;
   background-color: var(--bg-color);
