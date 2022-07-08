@@ -64,7 +64,6 @@ header {
   background-color: var(--bg-color);
   box-shadow: var(--header-shadow);
   position: fixed;
-  width: 100%;
 }
 
 header .container {
@@ -380,7 +379,6 @@ section {
     justify-content: space-around;
     align-items: center;
   }
-
   .card {
   position: relative;
   background-color: var(--bg-color);
