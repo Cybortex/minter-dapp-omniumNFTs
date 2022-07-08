@@ -376,10 +376,9 @@ section {
 
 @media screen and (max-width: 500px)  {
   header .container {
-    flex-direction:row;
+    flex-direction:column;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
   }
 
   .card {
