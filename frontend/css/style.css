@@ -65,6 +65,7 @@ header {
   box-shadow: var(--header-shadow);
   position: fixed;
   width: 100%;
+  z-index: 9999;
 }
 
 header .container {
@@ -562,4 +563,15 @@ section {
   padding: 1rem;
   font-size: 13px;
 }
+
+.smallscreen-hidden{
+  display: none;
+}
+}
+
+@media screen and (min-width :1200px) {
+  .largescreen-hidden {
+    display: none;
+  }
+
 }
