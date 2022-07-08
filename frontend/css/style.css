@@ -27,7 +27,7 @@ body {
   background-color: var(--bg-color);
   display: flex;
   flex-flow: column;
-  height: 100vh;
+  height: 120vh;
   color: var(--font-color);
   font-family: var(--font-primary);
 }
@@ -65,7 +65,6 @@ header {
   box-shadow: var(--header-shadow);
   width: 100%;
   z-index: 9999;
-  margin-bottom: 2rem;
 }
 
 header .container {
@@ -388,8 +387,9 @@ section {
     background-color: var(--bg-color-transparent);
     border-radius: 5px;
     padding: 2rem;
-    margin: 0 auto;
+    margin: 10px;
   }
+
   .countdown ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
