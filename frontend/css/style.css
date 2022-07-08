@@ -418,6 +418,9 @@ section {
   .hidden {
     display: none;
   }
+  .smallscreen-hidden {
+    display: none;
+  }
   
 }
 
