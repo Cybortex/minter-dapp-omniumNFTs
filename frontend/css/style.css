@@ -370,6 +370,12 @@ section {
   display: none;
 }
 @media screen and (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   .menu {
     gap: 1rem;
   }
@@ -422,6 +428,10 @@ section {
     display: none;
   }
   
+  #mintContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* UTILITIES */
