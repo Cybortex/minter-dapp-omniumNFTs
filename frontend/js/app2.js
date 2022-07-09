@@ -52,3 +52,52 @@ function countdown21function() {
   seconds22.innerHTML = s2 < 10 ? '0' + s2 : s2;
   }
   setInterval(countdown21function, 1000);
+
+
+ function connectWallet2() {
+  const {
+    authenticate,
+    isWeb3Enabled,
+    IsAuthenticated,
+    user,
+    enableWeb3,
+    Moralis, 
+  } =useMoralis
+ }
+ 
+ async function authWalletConnect() {
+  const user =  authenticate ({
+    provider: "walletconnect" ,
+    chainId: 137,
+    });
+    console.log(user);
+ }
+
+ const authenticateButton = document.getElementById("connectWallet2");
+
+useEffect (() => {
+  if (isWeb3Enabled && IsAuthenticated) {
+    enableWeb3({ provider: "walletconnect", chainId: 137 });
+    console.log("web3 activated ")
+  }
+}, [isWeb3Enabled, IsAuthenticated. enableWeb3]);
+
+document.addEventListener("visibilitychange", () => {
+if (document.visibilityState === "hidden") {
+  window.localStorage.removeItem("WALLETCONNECT_DEEPLINK_CHOICE ")
+}
+});
+
+if (!IsAuthenticated && !user) {
+  authenticateButton.innerText = "WalletConnect";
+  authenticateButton.onclick = () => {
+    if (isWeb3Enabled && IsAuthenticated) {
+      enableWeb3({ provider: "walletconnect", chainId: 137 });
+      console.log("web3 activated ");
+    }
+  }, [isWeb3Enabled, IsAuthenticated. enableWeb3]);
+}
+
+
+ 
+ 
