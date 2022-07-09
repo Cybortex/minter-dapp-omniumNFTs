@@ -28,6 +28,7 @@ body {
   flex-flow: column;
   color: var(--font-color);
   font-family: var(--font-primary);
+  height: 150vh;
 }
 
 .container {
@@ -39,6 +40,10 @@ body {
   justify-content: center;
   overflow: hidden;
 }
+.connect-btns{
+  display: flex;
+  flex-direction: row;
+ }
 
 footer {
   display: block;
@@ -53,7 +58,6 @@ footer {
   z-index: 15000;
   bottom: 0%;
   max-width: 100%;
-  margin-top: 100%;
   }
 
 /* HEADER */
@@ -342,7 +346,7 @@ section {
 
 .splide__slide {
   border: var(--accent-color) solid;
-  border-width: 5px 10px;
+  border-width:3px 7px;
 }
 
 .splide__slide img {
