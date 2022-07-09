@@ -1,3 +1,6 @@
+Moralis.initialize('O0dyqgnzFYTgl2b5INnhzGXUESl4i1umoWWUon8z')
+Moralis.serverURL = 'https://x05mihnk2h3p.usemoralis.com:2053/server';
+
 const authenticateButton = document.getElementById('connectWallet2')
   
 let user;
