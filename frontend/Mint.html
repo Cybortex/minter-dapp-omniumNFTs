@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <title>Omnium Collectibles | Mint</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
     <script src="https://github.com/WalletConnect/walletconnect-monorepo/releases/download/1.7.1/web3-provider.min.js"></script> 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,16 +41,12 @@
           </a>
         </div>
         <div class="connect-btns">
-          <button class="wallet-btn btn " style="margin: 1rem; " id="connectWallet" style=" size-adjust: 100px; position: relative;">
-            <span>Connect MetaMask</span>
-          </button>
-  
-          <button class="wallet-btn btn " style="margin: 1rem; " id="connectWallet2" style=" size-adjust: 100px; position: relative;">
-            <span>Connect Wallet</span>
-          </button>
 
-          <button class="wallet-btn btn hidden" style="margin: 1rem; " id="btn-logout" style=" size-adjust: 100px; position: relative;">
-            <span>Logout</span>
+          <button class="wallet-btn btn " style="margin: 1rem; " id="connectWallet" style=" size-adjust: 100px; position: relative;">
+            <span>Connect Wallet</span>
+          </button>  
+          <button class="wallet-btn btn " style="margin: 1rem; " id="btn-login" style=" size-adjust: 100px; position: relative;">
+            <span>Connect Wallet</span>
           </button>
           </div>
 
@@ -240,6 +238,6 @@
     <script src="js/constants.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/walletconnect.js"></script>
+    <script type="text/javascript" src="js/s.js"></script>
   </body>
 </html>
