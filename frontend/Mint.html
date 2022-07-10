@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Omnium Collectibles | Mint</title>
+    <script src="https://github.com/WalletConnect/walletconnect-monorepo/releases/download/1.7.1/web3-provider.min.js"></script> 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +45,10 @@
   
           <button class="wallet-btn btn " style="margin: 1rem; " id="connectWallet2" style=" size-adjust: 100px; position: relative;">
             <span>Connect Wallet</span>
+          </button>
+
+          <button class="wallet-btn btn hidden" style="margin: 1rem; " id="btn-logout" style=" size-adjust: 100px; position: relative;">
+            <span>Logout</span>
           </button>
           </div>
 
@@ -228,7 +233,7 @@
    
   
 
-    <script src="https://github.com/WalletConnect/walletconnect-monorepo/releases/download/1.7.1/web3-provider.min.js"></script>    
+       
     <script src="js/metamask-onboarding.bundle.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/splide.min.js"></script>
