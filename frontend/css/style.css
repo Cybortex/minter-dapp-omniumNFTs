@@ -19,7 +19,7 @@
 
 * {
   padding: 0;
-  margin: 10;
+  margin: 0;
 }
 
 body {
@@ -28,7 +28,7 @@ body {
   flex-flow: column;
   color: var(--font-color);
   font-family: var(--font-primary);
-  height: 150vh;
+  height: 210vh;
 }
 
 .container {

@@ -1,47 +1,39 @@
-Moralis.initialize('O0dyqgnzFYTgl2b5INnhzGXUESl4i1umoWWUon8z')
-Moralis.serverURL = 'https://x05mihnk2h3p.usemoralis.com:2053/server';
+const Moralis = require("moralis");
+import {useMoralis} from "@walletconnect/web3-provider";
+
+Moralis.initialize('Ut7ueXcX5F4skNoCGhnlv4UEzBAN22fzhGQrqZU1')
+Moralis.serverURL = 'https://xhttps://xokhrrruvxrw.usemoralis.com:2053/server05mihnk2h3p.usemoralis.com:2053/server';
 Moralis.start({ serverUrl, appId });
 
 const authenticateButton = document.getElementById('connectWallet2')
-const logoutButton =  document.getElementById('btn-logout') 
-let user;
-let web3;
 
-function connectWallet2() {
-  user = Moralis.User.current();
 
-  if(user) {
-    authenticateButton.style.display =  "none"
-    logoutButton.style.display ="inline-block"
-    authenticateButton.innerText = `✔ ...${user.get('username')}`;
-   }
-
-  if(web3)  {
-    authenticateButton.style.display =  "inline-block"
-    authenticateButton.innerText = `WalletConnect`;
-   } 
+async function login() {
+  let user = Moralis.User.current();
+  if (!user) {
+    user = await Moralis.authenticate({
+      provider: "walletconnect", 
+      chainId: 137,
+    mobileLinks: [
+      "rainbow",
+      "metamask",
+      "argent",
+      "trust",
+      "imtoken",
+      "pillar",
+    ] 
+    })
+      .then(function (user) {
+        console.log("logged in user:", user);
+        console.log(user.get("maticAddress"));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 }
 
-async function authenticate()  {
-  try {
-    user = await Moralis.Web3.authenticate({provider: 'walletconnect'});
-    web3 = await Moralis.Web3.enable({provider: 'walletconnect'});
-   } catch (error)  {
-    console.log('authenticate fail', error);
-    }
-    connectWallet2();
-  }
 
-  async function logout() {
-    try {
-      await Moralis.Web3.logout();      
-     } catch (error)  {
-      console.log('logout fail', error);
-      }
-      connectWallet2();
-    } 
+  authenticateButton.onclick =  login();
+  
 
-  authenticateButton.onclick = authenticate;
-  logoutButton.onclick = logout;
-
-  connectWallet2();
