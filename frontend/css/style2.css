@@ -122,7 +122,8 @@ button{
     display: flex;
     align-items: center;
     justify-content: space-around;
-  
+    text-align: center;
+    
 }
 
 .menu{
@@ -175,7 +176,8 @@ button{
   max-width: 100%;
  margin-top: 100%;
   }
- 
+
+
  #countdown2h {
   display: flex;
   flex-direction: row;
@@ -265,6 +267,7 @@ font-weight: normal;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .welcomehe {
