@@ -28,7 +28,7 @@ body {
   flex-flow: column;
   color: var(--font-color);
   font-family: var(--font-primary);
-  height: 210vh;
+  height: 150vh;
 }
 
 .container {
@@ -371,6 +371,15 @@ section {
   display: none;
 }
 @media screen and (max-width: 768px) {
+  
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-flow: column;
+  color: var(--font-color);
+  font-family: var(--font-primary);
+  height: 210vh;
+}
   header .container {
     flex-direction: column;
     justify-content: space-around;
