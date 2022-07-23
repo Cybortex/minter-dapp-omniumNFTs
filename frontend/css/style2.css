@@ -126,6 +126,8 @@ button{
     
 }
 
+
+
 .menu{
   position: initial;
   width: 50%;
@@ -153,7 +155,7 @@ button{
 .list-link:hover,
 .btn:hover,
 .btn:hover span{
-  color: #ffe601;
+  color: #534c08;
 }
 .container{
     display: flex;
@@ -312,6 +314,30 @@ font-weight: normal;
   .smallscreen-hidden{
     display: none;
   }
+
+  .menu {
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacitiy .25s ease-in;
+    position: absolute;
+}
+
+.menu.activated {
+  flex-direction: column;
+  align-content: center;
+  opacity:1;
+  transform: scale(1);
+
+}
+#mobilemenuicon {
+  border-radius: 4rem;
+}
+
+.menu > .list{
+  flex-direction: column;
+}
+
   #b1 > h1 {
     align-items: center;
     text-align: center;
@@ -325,7 +351,7 @@ font-weight: normal;
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
-    padding: 10x;
+    padding: 10px;
     top:0%; right: 0%; left: 0%;
     width: 100%;
     margin: 0%;

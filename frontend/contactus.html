@@ -8,7 +8,7 @@
 
     <!-- favicon -->
     <link
-      rel="apple-touch-icon"
+      rel="logo"
       sizes="180x180"
       href="images/x-icon/OmniumMeta.png"
     />
@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="css/style2.css" />
   </head>
   <body>
-   
+
+   <div class="smallscreen-hidden" >
     <section id="countdown2h" >
       <div id="countdown2" class="countdown2">
     
@@ -64,7 +65,7 @@
       </div>
     
     </div class="wallet-btn btn screen-sm-hidden" id="go-to-mint-page">
-    <a href="file:///C:/OB/Projects/git/minter-dapp-omniumNFTs/frontend/Mint.html">
+    <a href="./mint.html">
        <button class="wallet-btn btn ">
             <span> Go To Mint Page</span>
        </button>
@@ -73,43 +74,150 @@
      </div>
     
     </section>
+  </div>
 
+  
+  <div class="largescreen-hidden " id="b1" >
 
-    <header class="header" id="header">
-      <nav class="navbar container">
-          <a class="logo" href="/C:/OB/Projects/git/minter-dapp-omniumNFTs/frontend/index.html">
-              <img src="C:\OB\Projects\git\minter-dapp-omniumNFTs\frontend\images\x-icon\OmniumMeta.png" alt="logo" />
-            </a>
-            
-            <div class="menu" id="menu2">
-                <ul class="list">
-                  <li class="list-items">
-                      <a href="./index.html" class="list-link " >Home</a>
+    <h1>Next Public-Sale Date</h1>
+   
+    <section id="countdown2h1" >
+      <div id="countdown2" class="countdown2">
+          
+        <div class="time21">
+        <h2 class="count1" id="days22"></h2> <h2 class="count2">Days</h2>
+      </div>
+  
+      <div class="count4">
+       <h1>:</h1> 
+      </div>
+    
+      <div class="time21">
+        <h2 class="count1" id="hours22"></h2>    <h2 class="count2">Hours</h2> 
+      </div>
+  
+      <div class="count4">
+        <h1>:</h1> 
+       </div>
+    
+      <div class="time21">
+        <h2 class="count1"  id="minutes22"> </h2> 
+         <h2 class="count2">Minutes</h2>    
+      </div>
+  
+      <div class="count4">
+        <h1>:</h1> 
+       </div>
+    
+      <div class="time2">
+        <h2 class="count1" id="seconds22"> </h2> <h2 class="count2">Seconds</h2> 
+      </div>
+   
+    </section>
+  </div>
+
+  
+  <header class="header largescreen-hidden " id="header2">
+    <nav class="navbar container">
+        <a class="logo" style="padding-right: 35px;" href="/C:/OB/Projects/git/minter-dapp-omniumNFTs/frontend/index.html">
+            <img src="images/x-icon/OmniumMeta.png" alt="logo" />
+          </a>
+          <div class="menu" id="menu1">
+            <ul class="list">
+              <li class="list-items">
+                  <a href="./index.html" class="list-link " >Home</a>
+              </li>
+              <li class="list-items">
+                  <a href="./projects.html" class="list-link "  >Projects</a>
+              </li>
+              <li class="list-items">
+                  <a href="./roadmap.html" class="list-link " >RoadMap</a>
+              </li>
+              <li class="list-items">
+                  <a href="./membership.html" class="list-link " >Membership</a>
+              </li>
+              <li class="list-items">
+                  <a href="./aboutus.html" class="list-link " >About Us</a>
+              </li>
+              <li class="list-items">
+                <a href="./contactus.html" class="list-link current" >Contact Us</a>
+            </li>
+            </ul>
+        </div>
+
+        <button id="mobilemenuicon">Menu</button>
+    </nav>        
+</header>
+
+    <header class="header smallscreen-hidden" id="header">
+        <nav class="navbar container">
+            <a class="logo" href="/C:/OB/Projects/git/minter-dapp-omniumNFTs/frontend/index.html">
+                <img src="images/x-icon/OmniumMeta.png" alt="logo" />
+              </a>
+              
+              <div class="menu" id="menu2">
+                  <ul class="list">
+                    <li class="list-items">
+                        <a href="./index.html" class="list-link " >Home</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./projects.html" class="list-link "  >Projects</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./roadmap.html" class="list-link " >RoadMap</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./membership.html" class="list-link " >Membership</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./aboutus.html" class="list-link " >About Us</a>
+                    </li>
+                    <li class="list-items">
+                      <a href="./contactus.html" class="list-link current" >Contact Us</a>
                   </li>
-                  <li class="list-items">
-                      <a href="./projects.html" class="list-link "  >Projects</a>
-                  </li>
-                  <li class="list-items">
-                      <a href="./roadmap.html" class="list-link " >RoadMap</a>
-                  </li>
-                  <li class="list-items">
-                      <a href="./membership.html" class="list-link " >Membership</a>
-                  </li>
-                  <li class="list-items">
-                      <a href="./aboutus.html" class="list-link " >About Us</a>
-                  </li>
-                  <li class="list-items">
-                    <a href="./contactus.html" class="list-link current" >Contact Us</a>
-                </li>
-                </ul>
-            </div>
+                  </ul>
+              </div>
 
 
-             
+               
 
-      </nav>        
-  </header>
+        </nav>        
+    </header>
 
+    <header class="header smallscreen-hidden" id="header">
+        <nav class="navbar container">
+            <a class="logo" href="/C:/OB/Projects/git/minter-dapp-omniumNFTs/frontend/index.html">
+                <img src="images/x-icon/OmniumMeta.png" alt="logo" />
+              </a>
+              
+              <div class="menu" id="menu2">
+                  <ul class="list">
+                    <li class="list-items">
+                        <a href="./index.html" class="list-link" >Home</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./projects.html" class="list-link "  >Projects</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./roadmap.html" class="list-link " >RoadMap</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./membership.html" class="list-link " >Membership</a>
+                    </li>
+                    <li class="list-items">
+                        <a href="./aboutus.html" class="list-link " >About Us</a>
+                    </li>
+                    <li class="list-items">
+                      <a href="./contactus.html" class="list-link current" >Contact Us</a>
+                  </li>
+                  </ul>
+              </div>
+
+
+               
+
+        </nav>        
+    </header>
 
 
 

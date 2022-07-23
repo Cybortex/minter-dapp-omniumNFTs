@@ -53,4 +53,13 @@ function countdown21function() {
   }
   setInterval(countdown21function, 1000);
 
+const menuToggleIcon =  document.getElementById('mobilemenuicon');
   
+const toggleMenu = () =>   {
+  const mobileMenu = document.getElementById('menu1');
+  mobileMenu.classList.toggle('activated');
+  menuToggleIcon.classList.toggle('activated');
+
+}
+
+menuToggleIcon.addEventListener('click', toggleMenu);
