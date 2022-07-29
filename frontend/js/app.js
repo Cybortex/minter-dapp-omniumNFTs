@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
+
   const splide = new Splide(".splide", {
     type: "loop",
     arrows: false,
