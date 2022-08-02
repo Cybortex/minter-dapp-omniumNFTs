@@ -28,13 +28,13 @@ body {
   flex-flow: column;
   color: var(--font-color);
   font-family: var(--font-primary);
-  height: 150vh;
+  height: 120vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 1rem 2rem;
   justify-content: center;
@@ -190,7 +190,7 @@ section {
 
 .countdown {
   display: flex;
-  flex-direction:row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -260,7 +260,7 @@ section {
 
 .info-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   text-align: center;
   margin-bottom: 2rem;

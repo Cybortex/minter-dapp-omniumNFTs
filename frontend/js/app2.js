@@ -1,7 +1,7 @@
-const days = document.getElementById('days2')
-const hours = document.getElementById('hours2')
-const minutes = document.getElementById('minutes2')
-const seconds = document.getElementById('seconds2')
+const days2 = document.getElementById('days2')
+const hours2 = document.getElementById('hours2')
+const minutes2 = document.getElementById('minutes2')
+const seconds2 = document.getElementById('seconds2')
 
 const countdown = new Date().getTime();
 
@@ -17,10 +17,10 @@ function countdown2function() {
   const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const s = Math.floor(diff / 1000) % 60;
 
-  days.innerHTML = d < 10 ? '0' + d: d;
-  hours.innerHTML = h < 10 ? '0' + h : h;
-  minutes.innerHTML = m < 10 ? '0' + m : m;
-  seconds.innerHTML = s < 10 ? '0' + s : s;
+  days2.innerHTML = d < 10 ? '0' + d: d;
+  hours2.innerHTML = h < 10 ? '0' + h : h;
+  minutes2.innerHTML = m < 10 ? '0' + m : m;
+  seconds2.innerHTML = s < 10 ? '0' + s : s;
 }
    
 setInterval(countdown2function, 1000);
