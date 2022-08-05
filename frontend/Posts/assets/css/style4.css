@@ -234,7 +234,7 @@ body.light-theme{
   }
   
   .welcome-video{
-        height: 750px; width: 1000px; padding: 25px; margin-left:auto; margin-right: auto;
+        height: 750px; width: 1000px; padding: 25px; margin-left:0px; margin-right: auto;
   }
 
   @keyframes goToMintAnimation{
@@ -287,10 +287,13 @@ body.light-theme{
       height: 300px; width: 400px; margin-left: 10px; margin-right: 10px;
     }
 
-    
+    .extlink{
+      text-decoration:underline;
+       color:rgb(4, 184, 255);
+    }    
      
   
-    #b1 > h1 {
+    #b1 > h2 {
       align-items: center;
       text-align: center;
       padding-bottom: 1rem;

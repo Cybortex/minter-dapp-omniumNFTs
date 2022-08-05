@@ -287,7 +287,10 @@ body.light-theme{
       height: 300px; width: 400px; margin-left: 10px; margin-right: 10px;
     }
 
-    
+    .extlink{
+      text-decoration:underline;
+       color:rgb(4, 184, 255);
+    }    
      
   
     #b1 > h2 {
