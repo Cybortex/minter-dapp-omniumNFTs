@@ -322,7 +322,7 @@ body.light-theme{
 
   @media screen and (max-width :480px)  {
     .welcome-video{
-      height: 300px; width: 100%; margin-left: none;
+      height: 300px; width: 100%; margin-left: 0px;
 }
     
   }
