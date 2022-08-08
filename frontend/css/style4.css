@@ -284,7 +284,7 @@ body.light-theme{
      }
      .welcome-video{
     
-      height: 300px; width: 400px; margin-left: 10px; margin-right: 10px;
+      height: 500px; width: 600px; margin-left: 10px; margin-right: 10px;
     }
 
     .extlink{
@@ -317,6 +317,13 @@ body.light-theme{
        }
        .welcome-image { margin-left: auto; transform: scale(1); margin-right: auto; margin-bottom: 20px;  }
 
+    
+  }
+
+  @media screen and (max-width :480px)  {
+    .welcome-video{
+      height: 300px; width: 400px; margin-left: 0%;
+}
     
   }
   
