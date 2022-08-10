@@ -1,155 +1,11 @@
-require('dotenv').config();
 const basePath = process.cwd();
-const fs = require("fs");
-const { MODE } = require(`${basePath}/constants/blend_mode.js`);
 const { NETWORK } = require(`${basePath}/constants/network.js`);
-
-const network = NETWORK.eth;
-
-// General metadata for Ethereum
-const namePrefix = "Omnium Collectibles";
-const description = "Omnium Collectibles are NFTs That give holders special access to the features of the Omnium Meta Company.";
-const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
-
-// If you have selected Solana then the collection starts from 0 automatically
-const layerConfigurations = [
-  {
-    growEditionSizeTo: 4500,
-    layersOrder: [
-      { name: "NFT Drop" },
-    ],
-  },
-];
-
-const shuffleLayerConfigurations = true;
-
-const debugLogs = false;
-
-const format = {
-  width: 1500,
-  height: 1500,
-  smoothing: false,
-};
-
-const extraMetadata = {
-  external_url: "https://omniumnfts.ezyro.com/", // Replace with your website or remove this line if you do not have one.
-};
-
-// NFTPort Info
-
-// ** REQUIRED **
-const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
-const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'rinkeby'; // only rinkeby or polygon
-
-// REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'Omnium Collectibles';
-const CONTRACT_SYMBOL = 'OMNIUM C1';
-const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = '0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778';
-const TREASURY_ADDRESS = '0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778';
-const MAX_SUPPLY = 4500; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 120; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
-const TOKENS_PER_MINT = 5; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
-
-// REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-04-28T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
-
-// OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-08-22T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
-const ROYALTY_SHARE = 3000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778"; // Address that will receive the royalty
-const BASE_URI = null ; // only update if you want to manually set the base uri
-const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
-const PRESALE_WHITELISTED_ADDRESSES = ["0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778", "0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778"]; // only update if you want to manually set the whitelisted addresses
-
-// ** OPTIONAL **
-let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
-
-// Generic Metadata is optional if you want to reveal your NFTs
-const GENERIC = false; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
-const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
-const GENERIC_DESCRIPTION = "REPLACE THIS"; // Replace with what you want the generic descriptions to say.
-const GENERIC_IMAGE = ""; // Replace with your generic image that will display for all NFTs pre-reveal.
-
-// Automatically set contract address if deployed using the deployContract.js script
-try {
-  const rawContractData = fs.readFileSync(
-    `${basePath}/build/contract/_contract.json`
-  );
-  const contractData = JSON.parse(rawContractData);
-  if (contractData.response === "OK" && contractData.error === null) {
-    CONTRACT_ADDRESS = contractData.contract_address;
-  }
-} catch (error) {
-  // Do nothing, falling back to manual contract address
-}
-// END NFTPort Info
-
-const solanaMetadata = {
-  symbol: "YC",
-  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
-  creators: [
-    {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
-      share: 100,
-    },
-  ],
-};
-
-const gif = {
-  export: false,
-  repeat: 0,
-  quality: 100,
-  delay: 500,
-};
-
-const text = {
-  only: false,
-  color: "#ffffff",
-  size: 20,
-  xGap: 40,
-  yGap: 40,
-  align: "left",
-  baseline: "top",
-  weight: "regular",
-  family: "Courier",
-  spacer: " => ",
-};
-
-const pixelFormat = {
-  ratio: 2 / 128,
-};
-
-const background = {
-  generate: true,
-  brightness: "80%",
-  static: false,
-  default: "#000000",
-};
-
-const rarityDelimiter = "#";
-
-const uniqueDnaTorrance = 10000;
-
-const preview = {
-  thumbPerRow: 5,
-  thumbWidth: 50,
-  imageRatio: format.height / format.width,
-  imageName: "preview.png",
-};
-
-const preview_gif = {
-  numberOfImages: 5,
-  order: "ASC", // ASC, DESC, MIXED
-  repeat: 0,
-  quality: 100,
-  delay: 500,
-  imageName: "preview.gif",
-};
-
-module.exports = {
+const fs = require("fs");
+const sha1 = require(`${basePath}/node_modules/sha1`);
+const { createCanvas, loadImage } = require(`${basePath}/node_modules/canvas`);
+const buildDir = `${basePath}/build`;
+const layersDir = `${basePath}/layers`;
+const {
   format,
   baseUri,
   description,
@@ -157,38 +13,413 @@ module.exports = {
   uniqueDnaTorrance,
   layerConfigurations,
   rarityDelimiter,
-  preview,
   shuffleLayerConfigurations,
   debugLogs,
   extraMetadata,
-  pixelFormat,
   text,
   namePrefix,
   network,
   solanaMetadata,
   gif,
-  preview_gif,
-  AUTH,
-  LIMIT,
-  CONTRACT_ADDRESS,
-  OWNER_ADDRESS,
-  TREASURY_ADDRESS,
-  CHAIN,
-  GENERIC,
-  GENERIC_TITLE,
-  GENERIC_DESCRIPTION,
-  GENERIC_IMAGE,
-  CONTRACT_NAME,
-  CONTRACT_SYMBOL,
-  METADATA_UPDATABLE,
-  ROYALTY_SHARE,
-  ROYALTY_ADDRESS,
-  MAX_SUPPLY,
-  MINT_PRICE,
-  TOKENS_PER_MINT,
-  PRESALE_MINT_START_DATE,
-  PUBLIC_MINT_START_DATE,
-  BASE_URI,
-  PREREVEAL_TOKEN_URI,
-  PRESALE_WHITELISTED_ADDRESSES
+} = require(`${basePath}/src/config.js`);
+const canvas = createCanvas(format.width, format.height);
+const ctx = canvas.getContext("2d");
+ctx.imageSmoothingEnabled = format.smoothing;
+var metadataList = [];
+var attributesList = [];
+var dnaList = new Set();
+const DNA_DELIMITER = "-";
+const HashlipsGiffer = require(`${basePath}/modules/HashlipsGiffer.js`);
+
+let hashlipsGiffer = null;
+
+const buildSetup = () => {
+  if (fs.existsSync(buildDir)) {
+    fs.rmdirSync(buildDir, { recursive: true });
+  }
+  fs.mkdirSync(buildDir);
+  fs.mkdirSync(`${buildDir}/json`);
+  fs.mkdirSync(`${buildDir}/images`);
+  if (gif.export) {
+    fs.mkdirSync(`${buildDir}/gifs`);
+  }
 };
+
+const getRarityWeight = (_str) => {
+  let nameWithoutExtension = _str.slice(0, -4);
+  var nameWithoutWeight = Number(
+    nameWithoutExtension.split(rarityDelimiter).pop()
+  );
+  if (isNaN(nameWithoutWeight)) {
+    nameWithoutWeight = 1;
+  }
+  return nameWithoutWeight;
+};
+
+const cleanDna = (_str) => {
+  const withoutOptions = removeQueryStrings(_str);
+  var dna = Number(withoutOptions.split(":").shift());
+  return dna;
+};
+
+const cleanName = (_str) => {
+  let nameWithoutExtension = _str.slice(0, -4);
+  var nameWithoutWeight = nameWithoutExtension.split(rarityDelimiter).shift();
+  return nameWithoutWeight;
+};
+
+const getElements = (path) => {
+  return fs
+    .readdirSync(path)
+    .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item))
+    .map((i, index) => {
+      return {
+        id: index,
+        name: cleanName(i),
+        filename: i,
+        path: `${path}${i}`,
+        weight: getRarityWeight(i),
+      };
+    });
+};
+
+const layersSetup = (layersOrder) => {
+  const layers = layersOrder.map((layerObj, index) => ({
+    id: index,
+    elements: getElements(`${layersDir}/${layerObj.name}/`),
+    name:
+      layerObj.options?.["displayName"] != undefined
+        ? layerObj.options?.["displayName"]
+        : layerObj.name,
+    blend:
+      layerObj.options?.["blend"] != undefined
+        ? layerObj.options?.["blend"]
+        : "source-over",
+    opacity:
+      layerObj.options?.["opacity"] != undefined
+        ? layerObj.options?.["opacity"]
+        : 1,
+    bypassDNA:
+      layerObj.options?.["bypassDNA"] !== undefined
+        ? layerObj.options?.["bypassDNA"]
+        : false,
+  }));
+  return layers;
+};
+
+const saveImage = (_editionCount) => {
+  fs.writeFileSync(
+    `${buildDir}/images/${_editionCount}.png`,
+    canvas.toBuffer("image/png")
+  );
+};
+
+const genColor = () => {
+  let hue = Math.floor(Math.random() * 360);
+  let pastel = `hsl(${hue}, 100%, ${background.brightness})`;
+  return pastel;
+};
+
+const drawBackground = () => {
+  ctx.fillStyle = background.static ? background.default : genColor();
+  ctx.fillRect(0, 0, format.width, format.height);
+};
+
+const addMetadata = (_dna, _edition) => {
+  let dateTime = Date.now();
+  let tempMetadata = {
+    name: `${namePrefix} #${_edition}`,
+    description: description,
+    image: `${baseUri}/${_edition}.png`,
+    attributes: attributesList,
+    dna: sha1(_dna),
+    edition: _edition,
+    ...extraMetadata,
+    date: dateTime,
+    compiler: "HashLips Art Engine - codeSTACKr Modified",
+  };
+  if (network == NETWORK.sol) {
+    tempMetadata = {
+      //Added metadata for solana
+      name: tempMetadata.name,
+      symbol: solanaMetadata.symbol,
+      description: tempMetadata.description,
+      //Added metadata for solana
+      seller_fee_basis_points: solanaMetadata.seller_fee_basis_points,
+      image: `image.png`,
+      //Added metadata for solana
+      external_url: solanaMetadata.external_url,
+      edition: _edition,
+      ...extraMetadata,
+      attributes: tempMetadata.attributes,
+      properties: {
+        files: [
+          {
+            uri: "image.png",
+            type: "image/png",
+          },
+        ],
+        category: "image",
+        creators: solanaMetadata.creators,
+      },
+    };
+  }
+  metadataList.push(tempMetadata);
+  attributesList = [];
+};
+
+const addAttributes = (_element) => {
+  let selectedElement = _element.layer.selectedElement;
+  attributesList.push({
+    trait_type: _element.layer.name,
+    value: selectedElement.name,
+  });
+};
+
+const loadLayerImg = async (_layer) => {
+  return new Promise(async (resolve) => {
+    const image = await loadImage(`${_layer.selectedElement.path}`);
+    resolve({ layer: _layer, loadedImage: image });
+  });
+};
+
+const addText = (_sig, x, y, size) => {
+  ctx.fillStyle = text.color;
+  ctx.font = `${text.weight} ${size}pt ${text.family}`;
+  ctx.textBaseline = text.baseline;
+  ctx.textAlign = text.align;
+  ctx.fillText(_sig, x, y);
+};
+
+const drawElement = (_renderObject, _index, _layersLen) => {
+  ctx.globalAlpha = _renderObject.layer.opacity;
+  ctx.globalCompositeOperation = _renderObject.layer.blend;
+  text.only
+    ? addText(
+        `${_renderObject.layer.name}${text.spacer}${_renderObject.layer.selectedElement.name}`,
+        text.xGap,
+        text.yGap * (_index + 1),
+        text.size
+      )
+    : ctx.drawImage(
+        _renderObject.loadedImage,
+        0,
+        0,
+        format.width,
+        format.height
+      );
+
+  addAttributes(_renderObject);
+};
+
+const constructLayerToDna = (_dna = "", _layers = []) => {
+  let mappedDnaToLayers = _layers.map((layer, index) => {
+    let selectedElement = layer.elements.find(
+      (e) => e.id == cleanDna(_dna.split(DNA_DELIMITER)[index])
+    );
+    return {
+      name: layer.name,
+      blend: layer.blend,
+      opacity: layer.opacity,
+      selectedElement: selectedElement,
+    };
+  });
+  return mappedDnaToLayers;
+};
+
+/**
+ * In some cases a DNA string may contain optional query parameters for options
+ * such as bypassing the DNA isUnique check, this function filters out those
+ * items without modifying the stored DNA.
+ *
+ * @param {String} _dna New DNA string
+ * @returns new DNA string with any items that should be filtered, removed.
+ */
+const filterDNAOptions = (_dna) => {
+  const dnaItems = _dna.split(DNA_DELIMITER);
+  const filteredDNA = dnaItems.filter((element) => {
+    const query = /(\?.*$)/;
+    const querystring = query.exec(element);
+    if (!querystring) {
+      return true;
+    }
+    const options = querystring[1].split("&").reduce((r, setting) => {
+      const keyPairs = setting.split("=");
+      return { ...r, [keyPairs[0]]: keyPairs[1] };
+    }, []);
+
+    return options.bypassDNA;
+  });
+
+  return filteredDNA.join(DNA_DELIMITER);
+};
+
+/**
+ * Cleaning function for DNA strings. When DNA strings include an option, it
+ * is added to the filename with a ?setting=value query string. It needs to be
+ * removed to properly access the file name before Drawing.
+ *
+ * @param {String} _dna The entire newDNA string
+ * @returns Cleaned DNA string without querystring parameters.
+ */
+const removeQueryStrings = (_dna) => {
+  const query = /(\?.*$)/;
+  return _dna.replace(query, "");
+};
+
+const isDnaUnique = (_DnaList = new Set(), _dna = "") => {
+  const _filteredDNA = filterDNAOptions(_dna);
+  return !_DnaList.has(_filteredDNA);
+};
+
+const createDna = (_layers) => {
+  let randNum = [];
+  _layers.forEach((layer) => {
+    var totalWeight = 0;
+    layer.elements.forEach((element) => {
+      totalWeight += element.weight;
+    });
+    // number between 0 - totalWeight
+    let random = Math.floor(Math.random() * totalWeight);
+    for (var i = 0; i < layer.elements.length; i++) {
+      // subtract the current weight from the random weight until we reach a sub zero value.
+      random -= layer.elements[i].weight;
+      if (random < 0) {
+        return randNum.push(
+          `${layer.elements[i].id}:${layer.elements[i].filename}${
+            layer.bypassDNA ? "?bypassDNA=true" : ""
+          }`
+        );
+      }
+    }
+  });
+  return randNum.join(DNA_DELIMITER);
+};
+
+const writeMetaData = (_data) => {
+  fs.writeFileSync(`${buildDir}/json/_metadata.json`, _data);
+};
+
+const saveMetaDataSingleFile = (_editionCount) => {
+  let metadata = metadataList.find((meta) => meta.edition == _editionCount);
+  debugLogs
+    ? console.log(
+        `Writing metadata for ${_editionCount}: ${JSON.stringify(metadata)}`
+      )
+    : null;
+  fs.writeFileSync(
+    `${buildDir}/json/${_editionCount}.json`,
+    JSON.stringify(metadata, null, 2)
+  );
+};
+
+function shuffle(array) {
+  let currentIndex = array.length,
+    randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+  return array;
+}
+
+const startCreating = async () => {
+  let layerConfigIndex = 0;
+  let editionCount = 1;
+  let failedCount = 0;
+  let abstractedIndexes = [];
+  for (
+    let i = network == NETWORK.sol ? 0 : 0;
+    i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
+    i++
+  ) {
+    abstractedIndexes.push(i);
+  }
+  if (shuffleLayerConfigurations) {
+    abstractedIndexes = shuffle(abstractedIndexes);
+  }
+  debugLogs
+    ? console.log("Editions left to create: ", abstractedIndexes)
+    : null;
+  while (layerConfigIndex < layerConfigurations.length) {
+    const layers = layersSetup(
+      layerConfigurations[layerConfigIndex].layersOrder
+    );
+    while (
+      editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
+    ) {
+      let newDna = createDna(layers);
+      if (isDnaUnique(dnaList, newDna)) {
+        let results = constructLayerToDna(newDna, layers);
+        let loadedElements = [];
+
+        results.forEach((layer) => {
+          loadedElements.push(loadLayerImg(layer));
+        });
+
+        await Promise.all(loadedElements).then((renderObjectArray) => {
+          debugLogs ? console.log("Clearing canvas") : null;
+          ctx.clearRect(0, 0, format.width, format.height);
+          if (gif.export) {
+            hashlipsGiffer = new HashlipsGiffer(
+              canvas,
+              ctx,
+              `${buildDir}/gifs/${abstractedIndexes[0]}.gif`,
+              gif.repeat,
+              gif.quality,
+              gif.delay
+            );
+            hashlipsGiffer.start();
+          }
+          if (background.generate) {
+            drawBackground();
+          }
+          renderObjectArray.forEach((renderObject, index) => {
+            drawElement(
+              renderObject,
+              index,
+              layerConfigurations[layerConfigIndex].layersOrder.length
+            );
+            if (gif.export) {
+              hashlipsGiffer.add();
+            }
+          });
+          if (gif.export) {
+            hashlipsGiffer.stop();
+          }
+          debugLogs
+            ? console.log("Editions left to create: ", abstractedIndexes)
+            : null;
+          saveImage(abstractedIndexes[0]);
+          addMetadata(newDna, abstractedIndexes[0]);
+          saveMetaDataSingleFile(abstractedIndexes[0]);
+          console.log(
+            `Created edition: ${abstractedIndexes[0]}, with DNA: ${sha1(
+              newDna
+            )}`
+          );
+        });
+        dnaList.add(filterDNAOptions(newDna));
+        editionCount++;
+        abstractedIndexes.shift();
+      } else {
+        console.log("DNA exists!");
+        failedCount++;
+        if (failedCount >= uniqueDnaTorrance) {
+          console.log(
+            `You need more layers or elements to grow your edition to ${layerConfigurations[layerConfigIndex].growEditionSizeTo} artworks!`
+          );
+          process.exit();
+        }
+      }
+    }
+    layerConfigIndex++;
+  }
+  writeMetaData(JSON.stringify(metadataList, null, 2));
+};
+
+module.exports = { startCreating, buildSetup, getElements };
