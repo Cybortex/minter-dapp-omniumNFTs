@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       accounts = addr;
     });
   }
-
+sss
 
   const splide = new Splide(".splide", {
     type: "loop",
