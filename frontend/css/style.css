@@ -28,7 +28,7 @@ body {
   flex-flow: column;
   color: var(--font-color);
   font-family: var(--font-primary);
-  height: 120vh;
+  height: 220vh;
 }
 
 .container {
@@ -45,20 +45,6 @@ body {
   flex-direction: row;
  }
 
-footer {
-  display: block;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  justify-content: space-around;
-  color: #daf107;
-  font-family: var(--font-secondary);
-  padding: 15px;
-  background-color: var(--bg-color-transparent);
-  z-index: 15000;
-  bottom: 0%;
-  max-width: 100%;
-  }
 
 /* HEADER */
 
@@ -378,7 +364,7 @@ body {
   flex-flow: column;
   color: var(--font-color);
   font-family: var(--font-primary);
-  height: 155vh;
+  height: 355vh;
 }
   header .container {
     flex-direction: column;
