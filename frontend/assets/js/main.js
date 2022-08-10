@@ -1,3 +1,6 @@
+
+
+
 const days2 = document.getElementById('days2')
 const hours2 = document.getElementById('hours2')
 const minutes2 = document.getElementById('minutes2')
@@ -53,7 +56,9 @@ function countdown21function() {
   seconds22.innerHTML = s2 < 10 ? '0' + s2 : s2;
   }
   setInterval(countdown21function, 1000)
-// Grab elements
+
+
+  // Grab elements
 const selectElement = (selector) => {
     const element = document.querySelector(selector);
     if(element) return element;
@@ -76,7 +81,7 @@ window.addEventListener('scroll', scrollHeader);
 const menuToggleIcon = selectElement('#menu-toggle-icon');
 const formOpenBtn = selectElement('#search-icon');
 const formCloseBtn = selectElement('#form-close-btn');
-const searchContainer = selectElement('#search-form-container');
+
 
 const toggleMenu = () =>{
     const mobileMenu = selectElement('#menu');
@@ -86,13 +91,7 @@ const toggleMenu = () =>{
 
 menuToggleIcon.addEventListener('click', toggleMenu);
 
-// Open/Close search form popup
-formOpenBtn.addEventListener('click', () => searchContainer.classList.add('activated'));
-formCloseBtn.addEventListener('click', () => searchContainer.classList.remove('activated'));
-// -- Close the search form popup on ESC keypress
-window.addEventListener('keyup', (event) => {
-    if(event.key === 'Escape') searchContainer.classList.remove('activated');
-});
+
 
 // Switch theme/add to local storage
 const body = document.body;
