@@ -364,7 +364,7 @@ body {
   flex-flow: column;
   color: var(--font-color);
   font-family: var(--font-primary);
-  height: 270vh;
+  height: 300vh;
 }
   header .container {
     flex-direction: column;
