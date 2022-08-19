@@ -312,9 +312,9 @@ body.light-theme{
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 1px;
-    padding: 7px;
+    padding: 4px;
     height: 100%;
-    width: 250px;
+    width: 200px;
    
 }
 .headline-description {
@@ -861,7 +861,6 @@ body.light-theme{
 
     .older-posts .article{
         grid-template-columns: 25rem 1fr;
-        grid-template-rows: repeat(1, 1fr);
         
     }
 
@@ -870,7 +869,7 @@ body.light-theme{
     }
 
     .blog-post-data img{
-        height: var(--item-min-height-sm);;
+        height: var(--item-min-height-md);;
     }
 }
 
@@ -954,7 +953,7 @@ body.light-theme{
     }
 
     .blog-post-data img{
-        height: 50rem;
+        height: 40rem;
     }
 }
 

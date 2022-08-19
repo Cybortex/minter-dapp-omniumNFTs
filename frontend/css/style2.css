@@ -37,7 +37,7 @@
 }
 
 html{
-    font-size: 62.5%;
+    font-size: 82.5%;
 }
 
 body{
@@ -601,6 +601,7 @@ s
 /* Footer */
 .footer{
     background-color: var(--secondary-background-color);
+    font-size: small;
 }
 
 .footer-container{
