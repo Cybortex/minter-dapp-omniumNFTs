@@ -5,7 +5,7 @@ const seconds2 = document.getElementById('seconds2')
 
 const countdown = new Date().getTime();
 
-const countDownTime = new Date('August 20 2022 00:00:00');
+const countDownTime = new Date('August 28 2022 00:00:00');
 
 
 function countdown2function() {
@@ -35,7 +35,7 @@ const seconds22 = document.getElementById('seconds22')
 
 const countdown2 = new Date().getTime();
 
-const countDownTime2 = new Date('August 20 2022 00:00:00');
+const countDownTime2 = new Date('August 28 2022 00:00:00');
 
 
 function countdown21function() {
