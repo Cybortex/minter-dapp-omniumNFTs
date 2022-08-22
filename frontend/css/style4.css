@@ -237,6 +237,11 @@ body.light-theme{
         height: 750px; width: 1000px; padding: 25px; margin-left:0px; margin-right: auto;
   }
 
+  .extlink{
+    text-decoration:underline;
+     color:rgb(93, 4, 177);
+  }    
+
   @keyframes goToMintAnimation{
     0%{background-color: #e2cc00 ;}
     20%{background-color: #e2cb00ec ;}
@@ -285,10 +290,7 @@ body.light-theme{
       height: 500px; width: 600px; margin-left: auto; margin-right: auto;
     }
 
-    .extlink{
-      text-decoration:underline;
-       color:rgb(4, 184, 255);
-    }    
+ 
      
   
     #b1 > h2 {

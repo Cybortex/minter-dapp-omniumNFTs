@@ -1,5 +1,5 @@
-const contractAddress = "0xB7451A0490f4B81E16f2eB42e8b31140f84Cb716"; //Replace with your own contract address
-const chain = 'rinkeby'; // rinkeby or polygon
+const contractAddress = "0xe344dDA59e42778eEdCEe84Ae726e5927A452C1b"; //Replace with your own contract address
+const chain = 'polygon'; // rinkeby or polygon
 
 const welcome_h1 = "Welcome to the Omnium Collectibles NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
