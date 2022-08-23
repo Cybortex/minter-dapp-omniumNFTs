@@ -63,13 +63,13 @@ const LIMIT = 2; // Your API key rate limit
 const CHAIN = 'polygon'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'Omnium Collectibles';
+const CONTRACT_NAME = 'Omnium Meta Collectibles';
 const CONTRACT_SYMBOL = 'OMNICS';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778';
 const TREASURY_ADDRESS = '0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778';
 const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 120; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const MINT_PRICE = 75; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
@@ -84,7 +84,8 @@ const PREREVEAL_TOKEN_URI = "ipfs://bafkreiarhadeolnpmotg32omh2mta7q55p2gzf72yez
 const PRESALE_WHITELISTED_ADDRESSES = ["0xb00d38745ed4Ea8D5EB09fb9B92F312A34f24778"]; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
-let CONTRACT_ADDRESS = "0x7e595097808e7730F3be33f792e84123BE9431a5"; // If you want to manually include it
+let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
+
 
 // Generic Metadata is optional if you want to reveal your NFTs
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
