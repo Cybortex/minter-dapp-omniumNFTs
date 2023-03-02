@@ -5,7 +5,7 @@
   
   const countdown = new Date().getTime();
   
-  const countDownTime = new Date('October 15 2022 00:00:00');
+  const countDownTime = new Date('Feburary 10 2023 00:00:00');
   
   
   function countdownfunction() {

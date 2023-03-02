@@ -16,6 +16,7 @@
     --btn-bg-color: #e2cc00;
     --accent-color: #000000;
     --font-family: 'Poppins', sans-serif;
+    --font-color: #e2cc00;
     --font-size-xsm: 1.2rem;
     --font-size-sm: 1.6rem;
     --font-size-md: 2.4rem;
@@ -52,7 +53,7 @@ html{
 body{
     font-family: var(--font-family);
     font-size: var(--font-size-sm);
-    color:  #dac50b;
+    color: var(--font-color);
     background-color: var(--primary-background-color);
     letter-spacing: 1px;
     transition: background-color .25s,color .25s;
@@ -147,10 +148,10 @@ body.light-theme{
     text-align: center;
     padding-bottom: 1rem;
     margin-top: 2px;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: normal;
     z-index: 15000;
-    color: var(--font-color);
+    color: #e2cc00;
    }
 
 .countdown-block {
@@ -193,7 +194,7 @@ body.light-theme{
     color: #e2cc00;
     font-weight: bold;
     font-size: large;
-    margin-top: 16px;
+    margin-top: 10px;
     transform: scale(1.3);
 }
   
@@ -979,8 +980,8 @@ body.light-theme{
        .welcome{
         font-size: large;
        }
-       .welcome-video{    
-        height: 500px; width: 600px; margin-left: auto; margin-right: auto;
+       .video{    
+        height: 500px; width: 70%;  margin-left: auto; margin-right: auto;
       }
          
          .welcome-image { margin-left: auto; transform: scale(1); margin-right: auto; margin-bottom: 20px;  }
@@ -1135,8 +1136,8 @@ body.light-theme{
 }
 
 @media screen and (max-width :580px)  {
-    .welcome-video{
-      height: 300px; width: 100%; margin-left: 0px;
+    .video{
+      height: 300px; width: 70%; 
 }    
   }
 
